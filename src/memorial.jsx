@@ -1,63 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { DATA } from './data'
 
-// Sample paintings data - replace with your actual data structure
-const SAMPLE_PAINTINGS = [
-  {
-    id: 1,
-    title: "Sunset Over Mountains",
-    year: "2018",
-    medium: "Oil on Canvas",
-    description: "A vibrant exploration of light and color, capturing the fleeting moment when day transitions to night.",
-    imageUrl: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80",
-    palette: ["#FF6B35", "#F7931E", "#FDC830", "#4A90E2", "#2C3E50"]
-  },
-  {
-    id: 2,
-    title: "Urban Reflections",
-    year: "2019",
-    medium: "Acrylic on Canvas",
-    description: "An abstract interpretation of city life, where architecture and humanity intertwine.",
-    imageUrl: "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&q=80",
-    palette: ["#2C3E50", "#34495E", "#7F8C8D", "#BDC3C7", "#ECF0F1"]
-  },
-  {
-    id: 3,
-    title: "Garden Dreams",
-    year: "2020",
-    medium: "Watercolor",
-    description: "A delicate study of nature's beauty, celebrating the intricate details of botanical life.",
-    imageUrl: "https://images.unsplash.com/photo-1578926314433-e2789279f4aa?w=800&q=80",
-    palette: ["#27AE60", "#2ECC71", "#F39C12", "#E74C3C", "#8E44AD"]
-  },
-  {
-    id: 4,
-    title: "Coastal Serenity",
-    year: "2017",
-    medium: "Oil on Canvas",
-    description: "The peaceful rhythm of waves meeting shore, a meditation on the eternal dance of water and land.",
-    imageUrl: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&q=80",
-    palette: ["#3498DB", "#2980B9", "#1ABC9C", "#16A085", "#ECF0F1"]
-  },
-  {
-    id: 5,
-    title: "Autumn Whispers",
-    year: "2021",
-    medium: "Mixed Media",
-    description: "A celebration of seasonal transformation, where warm hues tell stories of change and renewal.",
-    imageUrl: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&q=80",
-    palette: ["#D35400", "#E67E22", "#F39C12", "#C0392B", "#8B4513"]
-  },
-  {
-    id: 6,
-    title: "Midnight Symphony",
-    year: "2019",
-    medium: "Oil on Canvas",
-    description: "An exploration of darkness and light, where shadows create their own melodies.",
-    imageUrl: "https://images.unsplash.com/photo-1561214078-f3247647fc5e?w=800&q=80",
-    palette: ["#191970", "#4B0082", "#8B008B", "#483D8B", "#6A5ACD"]
-  }
-];
 
 const PainterMemorial = () => {
   const [paintings, setPaintings] = useState([]);
@@ -73,30 +17,28 @@ const PainterMemorial = () => {
   // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
 
-  // Simulate fetching paintings from Cloudflare storage
-  const fetchPaintings = useCallback(async (pageNum) => {
-    setLoading(true);
-
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 800));
-
-    const start = pageNum * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
-    const newPaintings = SAMPLE_PAINTINGS.slice(start, end);
-
-    if (newPaintings.length === 0) {
-      setHasMore(false);
-    } else {
-      setPaintings(prev => [...prev, ...newPaintings]);
-    }
-
-    setLoading(false);
-  }, []);
-
-  // Initial load
+  // Combined effect for initial load and pagination
   useEffect(() => {
-    fetchPaintings(0);
-  }, []);
+    const loadPaintings = async () => {
+      setLoading(true);
+
+      await new Promise(resolve => setTimeout(resolve, 800));
+
+      const start = page * ITEMS_PER_PAGE;
+      const end = start + ITEMS_PER_PAGE;
+      const newPaintings = DATA.slice(start, end);
+
+      if (newPaintings.length === 0) {
+        setHasMore(false);
+      } else {
+        setPaintings(prev => page === 0 ? newPaintings : [...prev, ...newPaintings]);
+      }
+
+      setLoading(false);
+    };
+
+    loadPaintings();
+  }, [page]);
 
   // Intersection Observer for infinite scroll
   const lastPaintingRef = useCallback(node => {
@@ -111,12 +53,6 @@ const PainterMemorial = () => {
 
     if (node) observer.current.observe(node);
   }, [loading, hasMore]);
-
-  useEffect(() => {
-    if (page > 0) {
-      fetchPaintings(page);
-    }
-  }, [page, fetchPaintings]);
 
   const openModal = (painting) => {
     setSelectedPainting(painting);
