@@ -1,5 +1,7 @@
 name = "site-dam"
+main = "worker.js"
 compatibility_date = "2025-12-04"
+assets = { directory = "dist" }
 
 [[r2_buckets]]
 binding = "PAINTINGS_BUCKET"
