@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "title": "Abstracto",
+    "year": "",
+    "medium": "Dibujo Lapiz",
+    "description": "Boceto",
+    "imageUrl": "/images/Abstracto1.avif",
+    "palette": ["#242423", "#484846", "#363635", "#6C6C6A", "#C4C4C3"]
+  },
+  {
+    "id": 2,
+    "title": "Arquitectura",
+    "year": "",
+    "medium": "Dibujo Lapiz",
+    "description": "Iglesia",
+    "imageUrl": "/images/Arquitectura1.avif",
+    "palette": ["#242423", "#484846", "#363635", "#6C6C6A", "#C4C4C3"]
+  },
+  {
+    "id": 3,
+    "title": "Cuerpo con Luna",
+    "year": "",
+    "medium": "Dibujo Lapiz",
+    "description": "",
+    "imageUrl": "/images/Cuerpo1.avif",
+    "palette": ["#242423", "#484846", "#363635", "#6C6C6A", "#C4C4C3"]
+  },
+  {
+    "id": 4,
+    "title": "Cuerpo",
+    "year": "",
+    "medium": "Dibujo Lapiz",
+    "description": "",
+    "imageUrl": "/images/Cuerpo2.avif",
+    "palette": ["#242423", "#484846", "#363635", "#6C6C6A", "#C4C4C3"]
+  },
+  {
+    "id": 5,
+    "title": "Cuerpo",
+    "year": "",
+    "medium": "Dibujo Lapiz",
+    "description": "",
+    "imageUrl": "/images/Cuerpo3.avif",
+    "palette": ["#242423", "#484846", "#363635", "#6C6C6A", "#C4C4C3"]
+  },
+  {
+    "id": 6,
+    "title": "Escrito",
+    "year": "22.04.2019",
+    "medium": "Escrito",
+    "description": "En ese pais, todo es de madera y plastico, hasta sus corazones.",
+    "imageUrl": "/images/Escrito1.avif",
+    "palette": ["#242423", "#484846", "#363635", "#6C6C6A", "#C4C4C3"]
+  },
+  {
+    "id": 7,
+    "title": "Escrito",
+    "year": "22.04.2019",
+    "medium": "Escrito",
+    "description": "Inesperadamente el motor se detuvo, indefenso tus sentidos te acertan, piensas en diferentes escenarios Llovera? Buscar que alguien te remolque? Esperar que el viento te arrastre a la orilla? Suficiente agua y comida? Buscar S.O.S.? El capitan arranco el motor y nos llevo a tierra firme.",
+    "imageUrl": "/images/Escrito2.avif",
+    "palette": ["#242423", "#484846", "#363635", "#6C6C6A", "#C4C4C3"]
+  },
+  {
+    "id": 8,
+    "title": "Escrito",
+    "year": "22.04.2019",
+    "medium": "Escrito",
+    "description": "Todo lo bueno del campo te hace amarlo y la ciudad ya no es atractiva. Su silencio, su no estres, tu tuempo, la cercania de todo, el conocer a todos. En ambos ser sociable no es ni facil, ni sencillo.",
+    "imageUrl": "/images/Escrito3.avif",
+    "palette": ["#242423", "#484846", "#363635", "#6C6C6A", "#C4C4C3"]
+  }
+]
+

@@ -1,7 +1,12 @@
 {
   "name": "site-dam",
   "compatibility_date": "2025-12-04",
-  "assets": {
-    "directory": "./dist"
-  }
+  "pages_build_output_dir": "dist",
+  "r2_buckets": [
+    {
+      "binding": "PAINTINGS_BUCKET",
+      "bucket_name": "dam-data",
+      "preview_bucket_name": "dam-data"
+    }
+  ]
 }
