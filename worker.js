@@ -5,7 +5,7 @@ export default {
 
     // Handle /images/** routes
     if (path.startsWith('/images/')) {
-      const imagePath = path.slice('/images/'.length);
+      const imagePath = path.slice(1); // Remove leading '/' to get 'images/...'
 
       try {
         const object = await env.PAINTINGS_BUCKET.get(imagePath);
