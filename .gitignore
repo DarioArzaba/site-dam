@@ -26,3 +26,7 @@ dist-ssr
 
 # Wrangler
 .wrangler
+.wrangler/*
+
+# Windows Zone Identifier files
+*:Zone.Identifier

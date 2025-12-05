@@ -3,6 +3,10 @@ main = "worker.js"
 compatibility_date = "2025-12-04"
 assets = { directory = "dist" }
 
+[[routes]]
+pattern = "art.darioarzaba.com"
+custom_domain = true
+
 [[r2_buckets]]
 binding = "PAINTINGS_BUCKET"
 bucket_name = "dam-data"
