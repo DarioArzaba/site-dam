@@ -27,7 +27,7 @@ const PainterMemorial = () => {
 
         // Only load chunk if we haven't loaded it yet
         if (!loadedChunks.has(chunkIndex)) {
-          const response = await fetch(`/data/paintings-${chunkIndex}.json`);
+          const response = await fetch(`/data/data-${chunkIndex}.json`);
 
           if (!response.ok) {
             // No more chunks available
