@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Cafe San Miguel de Allende",
+    "year": "10/11/2018",
+    "medium": "",
+    "description": "Dibujando arcos en San Miguel de Allende",
+    "imageUrl": "/photos/Photo1.avif",
+    "palette": ["#412D10", "#9E7C34", "#2F210D", "#100A04", "#91712D"]
+  }
+]
